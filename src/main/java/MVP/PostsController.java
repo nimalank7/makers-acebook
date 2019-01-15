@@ -18,6 +18,7 @@ public class PostsController {
     public PostsController(PostRepository postRepository) {
         this.postRepository = postRepository;
     }
+
     @GetMapping("/")
     @ResponseBody
     public String Hello() {
@@ -26,8 +27,15 @@ public class PostsController {
 
     @GetMapping("/posts")
     public String displayPosts(Model model) {
+        model.addAttribute("post", new Post());
         model.addAttribute("list", postRepository.findAll());
         return "posts";
+    }
+
+    @PostMapping("/createpost")
+    public String createPost(@ModelAttribute Post post) {
+        postRepository.save(post);
+        return "redirect:/posts";
     }
 
 }

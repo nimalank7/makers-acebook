@@ -10,14 +10,24 @@ public class Post {
     @Column(name = "id")
     private Integer id;
     @Column(name = "user_id")
-    private Integer userId;
+    private Integer user_id;
     @Column(name = "text")
     private String text;
 
-    public Post() {}
+    public Post() {
+        this.user_id = 1;
+    }
+
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
+    }
+
+    public Integer getUser_id() {
+        return user_id;
+    }
 
     public Post(String text) {
-        this.userId = 1;
+        this.user_id = 1;
         this.text = text;
     }
 
