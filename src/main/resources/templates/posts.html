@@ -10,5 +10,11 @@
     <li th:text="${post.getText()}"></li>
 </ul>
 
+<form action="/newPost" method="post">
+    <label for="posttext">Enter your post here</label>
+    <input name="text" id="posttext" type="text">
+    <button type="submit">Submit</button>
+</form>
+
 </body>
 </html>
