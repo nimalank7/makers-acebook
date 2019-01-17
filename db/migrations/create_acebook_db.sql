@@ -1,0 +1,2 @@
+CREATE DATABASE acebook;
+CREATE DATABASE acebook_test;
