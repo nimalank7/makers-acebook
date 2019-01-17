@@ -46,4 +46,8 @@ public class Post {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public void delete(Integer id){
+       this.id = id;
+    }
 }

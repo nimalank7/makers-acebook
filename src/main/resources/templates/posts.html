@@ -7,6 +7,9 @@
 <body>
 <ul th:each="post:${list}">
     <li th:text="${post.getText()}"></li>
+    <form th:action="@{'/deletepost/' +  ${post.getId()}}" method="post">
+    <input type="submit" value="Delete">
+    </form>
 </ul>
 <form action="/createpost" th:object="${post}" method="post">
     <input type="text" th:field="*{text}" placeholder="Enter your post">
