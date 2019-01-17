@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
 public class PostsController {
     private final PostRepository postRepository;
@@ -35,6 +32,12 @@ public class PostsController {
     @PostMapping("/createpost")
     public String createPost(@ModelAttribute Post post) {
         postRepository.save(post);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/deletepost/{id}")
+    public String delete(@PathVariable Integer id){
+        postRepository.deleteById(id);
         return "redirect:/posts";
     }
 
