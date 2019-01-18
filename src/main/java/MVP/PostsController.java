@@ -29,6 +29,7 @@ public class PostsController {
         return "posts";
     }
 
+
     @PostMapping("/createpost")
     public String createPost(@ModelAttribute Post post) {
         postRepository.save(post);
