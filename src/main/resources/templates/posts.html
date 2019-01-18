@@ -6,7 +6,8 @@
 </head>
 <body>
 <ul th:each="post:${list}">
-    <li th:text="${post.getText()}"></li>
+    <!--<li th:text="${post.getText() + ' ' + post.getTimeStamp()}"></li>-->
+    <li th:text="${post.getText() + ' ' + #dates.format(post.getTimeStamp(), 'dd-MM-yyyy HH:mm')}"></li>
     <form th:action="@{'/deletepost/' +  ${post.getId()}}" method="post">
     <input type="submit" value="Delete">
     </form>

@@ -1,6 +1,7 @@
 package MVP.entity;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "posts")
@@ -13,6 +14,8 @@ public class Post {
     private Integer user_id;
     @Column(name = "text")
     private String text;
+    @Column(name = "time_stamp")
+    private Timestamp timestamp;
 
     public Post() {
         this.user_id = 1;
@@ -50,4 +53,12 @@ public class Post {
     public void delete(Integer id){
        this.id = id;
     }
+
+    public Timestamp getTimeStamp(){
+
+        return timestamp;
+    }
+
+
+
 }
